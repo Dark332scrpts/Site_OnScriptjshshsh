@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+try {
+  const encoded = location.hash.slice(1);
+
+  if(!encoded){
+    document.body.innerText = "Link inválido";
+  } else {
+    const decoded = decodeURIComponent(escape(atob(encoded)));
+
+    document.open();
+    document.write(decoded);
+    document.close();
+  }
+} catch {
+  document.body.innerText = "Erro ao carregar";
+}
+</script>
+
+</body>
+</html>
